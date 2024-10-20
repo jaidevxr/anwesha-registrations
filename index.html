@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anwesha Zonal Registration - IIT Patna</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="aaina logo white-2.png" alt="Aaina Logo" class="aaina-logo">
+        <img src="Anwesha-white.png" alt="Anwesha Logo" class="anwesha-logo">
+    </div>
+
+    <main>
+        <section id="about">
+            <h2>About the Event</h2>
+            <p>Join us for the Anwesha zonals at IIT Patna!</p>
+            <p><i class="fas fa-map-marker-alt"></i> Venue: Dr. Akhilesh Das Gupta Auditorium</p>
+            <p><i class="far fa-calendar-alt"></i> Date: [Insert Date Here]</p>
+            <p><i class="far fa-clock"></i> Time: [Insert Time Here]</p>
+            <p><i class="fas fa-info-circle"></i> Note: Don't forget to join our WhatsApp group for updates after submitting the form!</p>
+        </section>
+
+        <section id="register">
+            <h2>Registration Form</h2>
+            <form id="registration-form">
+                <label for="name">Full Name: *</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address: *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number: *</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="college">College Name: *</label>
+                <input type="text" id="college" name="college" required>
+
+                <fieldset>
+                    <legend>Which event(s) would you like to participate in? *</legend>
+                    <label><input type="checkbox" name="events" value="solo_classical"> Solo Classical Dance</label>
+                    <label><input type="checkbox" name="events" value="solo_western"> Solo Western Dance</label>
+                    <label><input type="checkbox" name="events" value="duet_dance"> Duet Dance</label>
+                    <label><input type="checkbox" name="events" value="group_dance"> Group Dance</label>
+                    <label><input type="checkbox" name="events" value="mono_acting"> Mono Acting</label>
+                    <label><input type="checkbox" name="events" value="street_play"> Street Play</label>
+                    <label><input type="checkbox" name="events" value="solo_singing"> Solo Singing</label>
+                    <label><input type="checkbox" name="events" value="beatboxing"> Beatboxing</label>
+                    <label><input type="checkbox" name="events" value="rapping"> Rapping</label>
+                    <label><input type="checkbox" name="events" value="poetry"> Poetry Recital</label>
+                    <label><input type="checkbox" name="events" value="stand_up"> Stand Up Comedy</label>
+                    <label><input type="checkbox" name="events" value="photo_story"> Photo Story Competition</label>
+                    <label><input type="checkbox" name="events" value="modelling"> Modelling</label>
+                </fieldset>
+
+                <label for="query">Any query?</label>
+                <textarea id="query" name="query"></textarea>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us: 7007294565 | jaiy9956@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
