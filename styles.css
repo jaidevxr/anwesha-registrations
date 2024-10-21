@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     z-index: 1000;
+    padding: 20px;
 }
 
 .aaina-logo, .anwesha-logo {
@@ -160,18 +161,43 @@ button:hover {
 .whatsapp-link i {
     margin-right: 5px;
 }
-
+footer {
+    text-align: center;
+}
+#about h2:nth-child(1) {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+}
 @media (max-width: 768px) {
+    body {
+        background-position: center;
+    }
+
     .logo-container {
-        flex-direction: column;
-        align-items: center;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1000;
+        padding: 10px;
     }
 
     .aaina-logo, .anwesha-logo {
-        margin-bottom: 10px;
+        width: 100px;
+        margin: 0 10px;
     }
 
     main {
-        padding-top: 150px;
+        padding-top: 80px;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer p {
+        padding: 10px;
     }
 }
