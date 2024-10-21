@@ -1,38 +1,35 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const registrationForm = document.getElementById('registration-form');
-
-    registrationForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(registrationForm);
-        const data = Object.fromEntries(formData.entries());
-        data.events = formData.getAll('events');
-
-        // Ensure at least one event is selected
-        if (data.events.length === 0) {
-            alert('Please select at least one event.');
-            return;
-        }
-
-        try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbyYuYBuYzVsVX1Tr2pzHm07wCQAdB8ylxzNlhtvfLCceW6Bg6SPx58M4S8ukLl2RZQ5/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                const result = await response.json();
-                alert(result.message);
-                window.location.href = 'success.html';
-            } else {
-                alert('Error submitting form. Please try again.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error submitting form. Please try again.');
-        }
+document.getElementById('registration-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    var formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      college: document.getElementById('college').value,
+      events: Array.from(document.querySelectorAll('input[name="events"]:checked')).map(function(checkbox) {
+        return checkbox.value;
+      }),
+      query: document.getElementById('query').value
+    };
+  
+    // Convert the data to a query string
+    var formBody = Object.keys(formData).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(JSON.stringify(formData[key]))).join('&');
+  
+    fetch('https://script.google.com/macros/s/AKfycbwslK5yFAbRjnJYDx0Wwgh-8hsdjaTvl7vJY9qCKasmzQFUQEMMIEXHXeCaVCV5I37E/exec', {
+      method: 'POST',
+      mode: 'no-cors', // This line is important for CORS
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formBody
+    })
+    .then(function(response) {
+      // Since we're using no-cors, we can't access the response body
+      // So we'll just assume it's successful if we get here
+      window.location.href = 'success.html';
+    })
+    .catch(function(error) {
+      console.error('Error:', error);
+      alert('Error submitting the form. Please try again later.');
     });
-});
+  });
