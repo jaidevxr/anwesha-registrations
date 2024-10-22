@@ -66,11 +66,13 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;  /* Center form elements */
 }
 
 label {
     margin: 10px 0 5px;
     color: #fff;
+    width: 100%;  /* Ensure full width */
 }
 
 input[type="text"],
@@ -89,6 +91,7 @@ textarea {
 fieldset {
     border: none;
     margin-bottom: 15px;
+    width: 100%;  /* Ensure full width */
 }
 
 legend {
@@ -113,12 +116,19 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    align-self: center;
     font-size: 1.1em;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+/* Styling for error messages */
+.error-message {
+    color: #ff4d4d;  /* Red color for error */
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 #success {
@@ -161,9 +171,11 @@ button:hover {
 .whatsapp-link i {
     margin-right: 5px;
 }
+
 footer {
     text-align: center;
 }
+
 #about h2:nth-child(1) {
     font-size: 2.5em;
     font-weight: bold;
@@ -171,6 +183,7 @@ footer {
     color: #fff;
     text-align: center;
 }
+
 @media (max-width: 768px) {
     body {
         background-position: center;
